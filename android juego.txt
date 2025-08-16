@@ -15,9 +15,14 @@ fun main() {
 
 	    break
 	    } else{
-	    fallos++
-	        println ("ese no es el numero")
+	    fallos++; 
+	    if(respuesta < numeroAzar){
+	        println ("el numero es mayor")
 	        println ("Intentos fallidos $fallos")
+	    } else{
+	        println("el numero es menor")
+	        println ("Intentos fallidos $fallos")
+	    }
 	    }
 	    
 	}
