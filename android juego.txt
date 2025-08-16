@@ -1,0 +1,51 @@
+import kotlin.random.Random;
+fun main() {
+     val numeroAzar = Random.nextInt(0,10)
+	var respuesta : Int
+	var fallos = 0
+	
+	print("Por favor introduce un numero sin punto decimal: ");
+	
+	
+	while (true ){
+	    respuesta = validar_numero_de_entrada()
+	    if(respuesta == numeroAzar){
+	    println ("Felicidades, le atinaste al numero $numeroAzar")
+	     println ("Intentos fallidos $fallos")
+
+	    break
+	    } else{
+	    fallos++
+	        println ("ese no es el numero")
+	        println ("Intentos fallidos $fallos")
+	    }
+	    
+	}
+	
+}
+fun validar_numero_de_entrada(): Int{
+
+var respuesta: String? = null;
+var respuesta_valida: Int? = null;
+
+
+
+	
+
+	while(true) {
+
+		respuesta = readlnOrNull();
+		if(respuesta ==null) {
+			println("no se que querias hacer");
+			continue
+		}
+		respuesta_valida = respuesta.toIntOrNull();
+		if(respuesta_valida ==null) {
+			println("eso no es numero joven, ponga un numero");
+		}
+		else {
+			return respuesta_valida!!;
+		}
+	}
+	return 0;
+}
